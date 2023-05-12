@@ -1,16 +1,15 @@
-import NavBar from "@/pages/NavBar/NavBar"
-import TitlePage from "@/pages/Title/Title"
-import Main from "@/pages/Main/Main"
+import { redirect } from 'next/navigation';
+import Login from "./Login";
 
-export default function Home() {
-  const isSignedIn = true
-
+export default async function Home() {
+  const session = !true
+  if (session) {
+    redirect('/main')
+  }
   return (
-    <main className="flex flex-col h-screen sm:w-96">
-      <NavBar />
-      <h1 className="text-2xl text-center">Title</h1>
-      {!isSignedIn && <TitlePage />}
-      {isSignedIn && <Main />}
+    <main className="flex flex-col flex-1">
+      <h1 className="text-2xl text-center">Brain Box</h1>
+      {!session && <Login />}
     </main >
   )
 }

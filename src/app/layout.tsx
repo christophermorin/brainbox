@@ -1,8 +1,10 @@
 import './globals.css'
+import NavBar from './NavBar'
+import { SessionProvider } from "next-auth/react"
 
 export const metadata = {
-  title: 'Crate Brain',
-  description: 'Crate your brain',
+  title: 'Brain Box',
+  description: `What's on your mind?`,
 }
 
 export default function RootLayout({
@@ -12,7 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className='flex flex-col h-screen sm:w-96'>
+        <NavBar />
+        {children}
+      </body>
     </html>
   )
 }
