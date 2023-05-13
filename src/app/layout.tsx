@@ -1,6 +1,5 @@
 import './globals.css'
 import NavBar from './NavBar'
-import { SessionProvider } from "next-auth/react"
 
 export const metadata = {
   title: 'Brain Box',

@@ -1,8 +1,10 @@
 import NewIdea from "./NewIdea"
 import Idea from "./Idea"
 import Link from "next/link"
+import { redirect } from 'next/navigation';
 
-export default function Main() {
+
+export default async function Main() {
 
   return (
     <>
