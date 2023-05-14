@@ -5,12 +5,12 @@ import { Session, createBrowserSupabaseClient } from '@supabase/auth-helpers-nex
 import { useRouter } from 'next/navigation'
 
 import type { SupabaseClient } from '@supabase/auth-helpers-nextjs'
-// import type { Database } from '@/lib/database.types'
+import { Database } from '@/lib/database'
 
 type MaybeSession = Session | null
 
 type SupabaseContext = {
-  supabase: SupabaseClient
+  supabase: SupabaseClient<Database>
   session: MaybeSession
 }
 
@@ -29,8 +29,13 @@ export default function SupabaseProvider({
   useEffect(() => {
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange(() => {
-      router.refresh()
+    } = supabase.auth.onAuthStateChange(async () => {
+      const { data: { session } } = await supabase.auth.getSession()
+      if (session && session?.user.aud === "authenticated") {
+        router.push("/main")
+      } else if (!session) {
+        router.push("/")
+      }
     })
 
     return () => {
@@ -39,7 +44,7 @@ export default function SupabaseProvider({
   }, [router, supabase])
 
   return (
-    <Context.Provider value={{ supabase, session }}>
+    <Context.Provider value={{ session, supabase }}>
       <>{children}</>
     </Context.Provider>
   )

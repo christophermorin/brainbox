@@ -1,8 +1,7 @@
-import NewIdea from "./NewIdea"
-import Idea from "./Idea"
-import Link from "next/link"
-import { redirect } from 'next/navigation';
 
+import NewIdea from "../../components/IdeaBoxes/NewIdea"
+import Idea from "../../components/IdeaBoxes/Idea"
+import Link from "next/link"
 
 export default async function Main() {
 
@@ -26,3 +25,4 @@ export default async function Main() {
     </>
   )
 }
+

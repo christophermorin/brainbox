@@ -1,6 +1,6 @@
 export default function Waves() {
   return (
-    <div className="flex flex-col justify-end">
+    <div className="flex flex-col justify-end w-full">
       <svg className="waves" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="0 24 150 28" preserveAspectRatio="none" shapeRendering="auto">
         <defs>
@@ -8,7 +8,7 @@ export default function Waves() {
         </defs>
         <g className="parallax">
           <use xlinkHref="#gentle-wave" x="48" y="0" fill="rgba(110,255,255,0.7" />
-          <use xlinkHref="#gentle-wave" x="48" y="3" fill="rgba(255,110,255,0.5)" />
+          <use xlinkHref="#gentle-wave" x="48" y="3" fill="rgba(255,110,255,0.5)" className="hover:fill-orange-500 transition ease-in-out duration-1000" />
           <use xlinkHref="#gentle-wave" x="48" y="5" fill="rgba(255,255,110,0.3)" />
           <use xlinkHref="#gentle-wave" x="48" y="7" fill="rgba(0,0,0,1)" />
         </g>
