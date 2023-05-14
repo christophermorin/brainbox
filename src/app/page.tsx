@@ -1,9 +1,6 @@
-import { redirect } from 'next/navigation';
-import Login from "./Login";
+import Login from "../components/Login";
 
 export default async function Home() {
-
-
   let session = false
   return (
     <main className="flex flex-col flex-1">

@@ -13,7 +13,7 @@ async function signInWithGitHub() {
   })
 }
 
-
+// Again, only the  buttons need be client components for interactivity. If I can update session status for whole app from there.
 
 export default function LoginButtons() {
   // const user = await supabase.auth.getUser()
