@@ -11,22 +11,22 @@ export default async function MainLayout({
 }: {
   children: React.ReactNode
 }) {
-  const supabase = createServerComponentSupabaseClient<Database>({
-    headers,
-    cookies,
-  })
-  const { data: { session } } = await supabase.auth.getSession()
+  // const supabase = createServerComponentSupabaseClient<Database>({
+  //   headers,
+  //   cookies,
+  // })
+  // const { data: { session } } = await supabase.auth.getSession()
 
-  if (!session?.user) {
-    return (
-      <Link href={"/"}>
-        <h1 className="text-2xl text-center">Brain Box</h1>
-        <div className="flex flex-col justify-center items-center h-screen">
-          Please sign in
-        </div>
-      </Link>
-    )
-  }
+  // if (!session?.user) {
+  //   return (
+  //     <Link href={"/"}>
+  //       <h1 className="text-2xl text-center">Brain Box</h1>
+  //       <div className="flex flex-col justify-center items-center h-screen">
+  //         Please sign in
+  //       </div>
+  //     </Link>
+  //   )
+  // }
 
   return (
     <>

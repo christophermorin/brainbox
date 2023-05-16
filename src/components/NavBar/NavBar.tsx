@@ -1,6 +1,7 @@
 "use client"
 // This doesn't need to be client, only the buttons
 import { useSupabase } from "@/app/supabase-provider"
+import Image from "next/image"
 
 export default function NavBar() {
   const { supabase } = useSupabase()
@@ -10,9 +11,16 @@ export default function NavBar() {
   }
 
   return (
-    <div className="flex p-2 justify-between">
-      <span onClick={() => signOut()}>Temp Signout</span>
-      <span >Temp Back</span>
+    <div className="grid grid-cols-2 justify-between p-2">
+      <span >LOGO</span>
+      <Image
+        src="/user-box.svg"
+        width={30}
+        height={30}
+        alt="User options"
+        onClick={() => signOut()}
+        className="justify-self-end"
+      />
     </div>
   )
 }

@@ -23,26 +23,24 @@ export default function SupabaseProvider({
   children: React.ReactNode
   session: MaybeSession
 }) {
-  const [supabase] = useState(() => createBrowserSupabaseClient())
+  const [supabase] = useState(() => createBrowserSupabaseClient<Database>())
   const router = useRouter()
 
-  useEffect(() => {
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange(async () => {
-      const { data: { session } } = await supabase.auth.getSession()
-      if (session && session?.user.aud === "authenticated") {
-        router.push("/main")
-      } else if (!session) {
-        router.push("/")
-      }
-    })
+  // useEffect(() => {
+  //   const {
+  //     data: { subscription },
+  //   } = supabase.auth.onAuthStateChange(async () => {
+  //     const { data: { session } } = await supabase.auth.getSession()
+  //     if (session && session?.user.aud === "authenticated") {
+  //       console.log("in prov")
+  //       router.push("/main")
+  //     }
+  //   })
 
-    return () => {
-      subscription.unsubscribe()
-    }
-  }, [router, supabase])
-
+  //   return () => {
+  //     subscription.unsubscribe()
+  //   }
+  // }, [router, supabase])
   return (
     <Context.Provider value={{ session, supabase }}>
       <>{children}</>
