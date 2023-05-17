@@ -17,7 +17,7 @@ export default function SignInButton({ provider }: Props) {
   return (
     <div
       onClick={() => signInWithProvider()}
-      className="flex items-center justify-between h-12 p-2 rounded-md border-t border-amber-800">
+      className="flex items-center justify-between h-12 p-2 rounded-md border-t border-amber-800 cursor-pointer">
       <span className="h-8 border border-amber-800"></span>
       <div className="uppercase underline decoration-amber-800 underline-offset-8">
         {provider}

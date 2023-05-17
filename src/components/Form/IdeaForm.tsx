@@ -19,11 +19,14 @@ export default function IdeaForm() {
       validationSchema={IdeaFormSchema}
       onSubmit={async (values) => {
         try {
-          const data = await supabase.rpc("create_idea", {
+          const { error, status } = await supabase.rpc("create_idea", {
             content: values.content,
             title: values.title
           })
-          router.push("/main")
+          if (!error && status === 200) {
+            console.log("in post success")
+            router.push("/main")
+          }
         } catch (error) {
           console.log(error)
         }

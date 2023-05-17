@@ -1,4 +1,6 @@
+import { Exo_2 } from 'next/font/google';
 import './globals.css'
+import Head from 'next/head'
 import NavBar from '../components/NavBar/NavBar'
 import SupabaseProvider from './supabase-provider'
 import SupabaseListener from './supabase-listener'
@@ -11,6 +13,13 @@ export const metadata = {
   title: 'Brain Box',
   description: `What's on your mind?`,
 }
+
+
+const exo = Exo_2({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-exo',
+});
 
 export const revalidate = 0;
 
@@ -25,7 +34,7 @@ export default async function RootLayout({
   })
   const { data: { session } } = await supabase.auth.getSession()
   return (
-    <html lang="en">
+    <html lang="en" className={`${exo.variable}`} >
       <body className='flex flex-col h-screen sm:w-96'>
         <SupabaseProvider session={session}>
           <SupabaseListener serverAccessToken={session?.access_token} />
