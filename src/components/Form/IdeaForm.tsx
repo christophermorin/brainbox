@@ -26,6 +26,7 @@ export default function IdeaForm() {
           if (!error && status === 200) {
             console.log("in post success")
             router.push("/main")
+            router.refresh()
           }
         } catch (error) {
           console.log(error)

@@ -1,13 +1,11 @@
-import Image from "next/image"
+import SettingsButton from "./SettingsButton"
+import AddNewButton from "./AddNewButton"
+
 export default function Footer() {
   return (
-    <footer className="flex justify-end items-center p-2 h-16 bg-zinc-900">
-      <Image
-        src="/gear-fine.svg"
-        width={30}
-        height={30}
-        alt="Settings"
-      />
+    <footer className="flex justify-between items-center p-3 bg-zinc-900">
+      <AddNewButton />
+      <SettingsButton />
     </footer>
   )
 }

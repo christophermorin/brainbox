@@ -50,7 +50,7 @@ export default function Idea({ idea }: Props) {
   })
 
   return (
-    <div className="grid grid-cols-1 p-2 h-56 bg-gradient-to-br from-slate-600 shadow-sm shadow-stone-200 rounded-sm relative hover:rotate-2">
+    <div className="grid grid-cols-1 p-2 h-56 shadow-sm shadow-stone-500 rounded-sm relative hover:-translate-y-1 hover:shadow-stone-200">
       {/* <div className="h-56 w-full absolute  border-b border-r border-amber-800 ring-offset-8 top-1 left-1"></div> */}
       <section className="text-center ">
         <p className="italic text-xs text-stone-500">{ideaCreatedAtString}</p>

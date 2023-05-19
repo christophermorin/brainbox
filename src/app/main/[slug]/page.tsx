@@ -6,7 +6,9 @@ import Link from "next/link"
 import Image from "next/image"
 
 interface Props {
-  params: string
+  params: {
+    slug: string
+  }
 }
 
 export default async function OneIdea({ params }: Props) {

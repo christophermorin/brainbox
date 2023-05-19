@@ -15,7 +15,6 @@ export default function SupabaseListener({
 }) {
   const { supabase } = useSupabase();
   const router = useRouter();
-  console.log("in listener")
   useEffect(() => {
     const {
       data: { subscription }
