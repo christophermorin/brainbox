@@ -24,7 +24,7 @@ export default function Ideas({ data, settings }: any) {
   return (
     <>
       <IdeasViewOptions changeView={changeView} />
-      <div className="h-full overflow-y-scroll ff-scroll ">
+      <div className="h-full overflow-y-scroll ff-scroll px-2 pb-2">
         {view === "list" || view === null ?
           <div className="grid grid-cols-1 gap-4 mt-2">
             <Link href={"/main/add"}>
@@ -32,9 +32,7 @@ export default function Ideas({ data, settings }: any) {
             </Link>
             {data && data.map((idea: any) => {
               return (
-                <Link href={`/main/${idea.id}`} key={idea.id}>
-                  <ListCard idea={idea} />
-                </Link>
+                <ListCard key={idea.id} idea={idea} />
               )
             })}
           </div>
@@ -45,9 +43,7 @@ export default function Ideas({ data, settings }: any) {
             </Link>
             {data && data.map((idea: any) => {
               return (
-                <Link href={`/main/${idea.id}`} key={idea.id}>
-                  <BoxCard idea={idea} />
-                </Link>
+                <BoxCard key={idea.id} idea={idea} />
               )
             })}
           </div>

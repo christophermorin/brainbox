@@ -4,6 +4,7 @@ import { createServerComponentSupabaseClient } from "@supabase/auth-helpers-next
 import { cookies, headers } from "next/headers"
 import Link from "next/link"
 import Image from "next/image"
+import UpdateForm from "@/components/Forms/UpdateForm"
 
 interface Props {
   params: {
@@ -17,7 +18,6 @@ export default async function OneIdea({ params }: Props) {
     cookies,
   })
   const { data } = await supabase.from("ideas").select("*").eq("id", params.slug)
-  console.log(typeof params)
   return (
     <>
       <div className="p-2">
@@ -33,11 +33,7 @@ export default async function OneIdea({ params }: Props) {
         </div>
       </div>
       <div className="flex flex-col gap-4 h-full p-4 ">
-
-        {/* <form className="flex flex-col flex-1 gap-4 rounded-md bg-white text-black p-4">
-          <input className="bg-transparent focus:outline-none font-bold" type="text" placeholder="Title" />
-          <textarea className="bg-transparent h-full focus:outline-none" placeholder="Whats on your mind?" />
-        </form> */}
+        <UpdateForm data={data} />
       </div>
     </>
   )

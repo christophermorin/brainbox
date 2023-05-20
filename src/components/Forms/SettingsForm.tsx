@@ -20,8 +20,6 @@ export default function SettingsForm({ settings }: any) {
   })
 
   const router = useRouter()
-  // Big fat error here because this exposes user_id in a request
-
 
   const changeView = () => {
     if (options.view === "list") {
@@ -76,7 +74,7 @@ export default function SettingsForm({ settings }: any) {
             </div>
           </div>
           <div className="flex justify-end self-end">
-            <button type="submit" className="bg-zinc-900 h-10 w-14 rounded-xl text-center uppercase font-bold">Save</button>
+            <button type="submit" className="bg-zinc-900 h-10 w-14 rounded-xl text-center uppercase font-bold  text-stone-200">Save</button>
           </div>
           <div className='grid grid-cols-2 bg-zinc-900 w-12 h-4 rounded-lg relative'
             onClick={changeView}>

@@ -12,7 +12,7 @@ export default function NavBar() {
 
   return (
     <div className="grid grid-cols-2 justify-between p-2">
-      <span >LOGO</span>
+      <span >Brain Box</span>
       <Image
         src="/user-box.svg"
         width={30}
