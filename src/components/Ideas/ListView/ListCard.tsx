@@ -46,8 +46,8 @@ export default function ListCard({ idea }: Props) {
               {ideaCreatedAtDigits}
             </span>
           </section>
-          <div className="p-2 font-bold text-xl">
-            <section className="text-stone-200">
+          <div className=" p-2 font-bold text-xl">
+            <section className="break-words text-stone-200">
               {idea.title}
             </section>
           </div>

@@ -52,9 +52,9 @@ export default function BoxCard({ idea }: Props) {
       <Link href={`/main/${idea.id}`} className="flex-1">
         <section className="text-center ">
           <p className="italic text-xs text-cyan-300">{ideaCreatedAtString}</p>
-          <p className={`font-bold text-xl mt-2 line-clamp-2 text-stone-200`}>{idea.title}</p>
+          <p className={`font-bold text-xl mt-2 break-words text-stone-200`}>{idea.title}</p>
         </section>
-        <div className=" overflow-hidden text-sm  text-stone-300">
+        <div className=" overflow-y-hidden break-words text-sm  text-stone-300">
           {contentIntoParas[0]}
           {contentIntoParas.length > 1 && <div className="text-stone-400">{`+ ${Math.floor((contentIntoParas.length - 1) / 2)} lines...`}</div>}
         </div>

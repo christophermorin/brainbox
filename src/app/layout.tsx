@@ -33,10 +33,10 @@ export default async function RootLayout({
   const { data: { session } } = await supabase.auth.getSession()
   return (
     <html lang="en" className={`${exo.variable}`} >
-      <body className='flex flex-col h-screen sm:w-96'>
+      <body className='flex flex-col h-screen'>
         <SupabaseProvider session={session}>
           <SupabaseListener serverAccessToken={session?.access_token} />
-          <NavBar />
+          {/* <NavBar /> */}
           {children}
         </SupabaseProvider>
       </body>

@@ -1,8 +1,9 @@
 import { createServerComponentSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import Login from "../components/Login";
+import Launch from "@/components/Launch";
 import { cookies, headers } from "next/headers";
 import { Database } from "@/lib/database";
-import { redirect } from "next/navigation";
+import NavBar from "@/components/NavBar";
 
 
 export default async function Home() {
@@ -11,13 +12,18 @@ export default async function Home() {
     cookies,
   })
   const { data: { session } } = await supabase.auth.getSession()
-  if (session?.user.aud === "authenticated") {
-    redirect("/main")
-  }
+  // if (session?.user.aud === "authenticated") {
+  //   redirect("/main")
+  // }
   return (
-    <main className="flex flex-col flex-1">
-      <h1 className="text-2xl text-center">Brain Box</h1>
-      <Login />
+    <main className="grid grid-cols-1 flex-1">
+      <NavBar />
+      {/* <h1 className="text-2xl text-center">Brain Box</h1> */}
+      {session?.user.aud === "authenticated" ?
+        <Launch />
+        :
+        <Login />
+      }
     </main >
   )
 }

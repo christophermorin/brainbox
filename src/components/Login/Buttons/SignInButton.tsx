@@ -1,6 +1,7 @@
 "use client"
 import { useSupabase } from "@/app/supabase-provider"
 import { Provider } from "@supabase/supabase-js"
+import Image from "next/image"
 
 interface Props {
   provider: Provider
@@ -8,21 +9,29 @@ interface Props {
 
 export default function SignInButton({ provider }: Props) {
   const { supabase } = useSupabase()
+  const signInProvider: string = provider
 
   async function signInWithProvider() {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: provider,
     })
   }
+
   return (
     <div
       onClick={() => signInWithProvider()}
-      className="flex items-center justify-between h-12 p-2 rounded-md border-t border-amber-800 cursor-pointer">
-      <span className="h-8 border border-amber-800"></span>
-      <div className="uppercase underline decoration-amber-800 underline-offset-8">
-        {provider}
+      className="flex rounded-md w-full h-16 bg-gradient-to-t from-zinc-950 shadow-sm shadow-stone-500 cursor-pointer">
+      <div className="grid grid-cols-2 items-center justify-items-center w-full pr-4">
+        <Image
+          src={`/${signInProvider}.svg`}
+          width={30}
+          height={30}
+          alt={`${signInProvider} SignIn`}
+        />
+        <span className="uppercase">
+          {signInProvider}
+        </span>
       </div>
-      <span className="h-8 border border-amber-800"></span>
     </div>
   )
 }
