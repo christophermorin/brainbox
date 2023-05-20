@@ -1,5 +1,5 @@
-import LoginButtons from "./LoginButtons"
-import Waves from "../Waves/Waves"
+import LoginButtons from "./Buttons/LoginButtons"
+import Waves from "../Waves"
 
 export default function Login() {
   return (

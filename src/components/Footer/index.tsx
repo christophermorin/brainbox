@@ -1,5 +1,5 @@
-import SettingsButton from "./SettingsButton"
-import AddNewButton from "./AddNewButton"
+import SettingsButton from "./Buttons/SettingsButton"
+import AddNewButton from "./Buttons/AddNewButton"
 
 export default function Footer() {
   return (

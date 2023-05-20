@@ -1,7 +1,7 @@
 import { createServerComponentSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import { Database } from "@/lib/database";
 import { cookies, headers } from "next/headers";
-import IdeasList from "@/components/List/IdeasList";
+import Ideas from "@/components/Ideas";
 
 export const revalidate = 1;
 
@@ -27,7 +27,7 @@ export default async function Main() {
       <div className="p-2">
         <input className="w-full bg-zinc-900 h-12 rounded-xl text-center" type="search" placeholder="Search" />
       </div>
-      <IdeasList data={data} settings={settings.data} />
+      <Ideas data={data} settings={settings.data} />
     </>
   )
 }

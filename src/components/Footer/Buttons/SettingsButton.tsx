@@ -1,10 +1,11 @@
 import Link from "next/link"
 import Image from "next/image"
-export default function AddNewButton() {
+
+export default function SettingsButton() {
   return (
-    <Link href={"/main/add"}>
+    <Link href={"/main/settings"}>
       <Image
-        src="/add.svg"
+        src="/gear-fine.svg"
         width={30}
         height={30}
         alt="Settings"

@@ -10,7 +10,7 @@ interface Props {
   }
 }
 
-export default function ListIdea({ idea }: Props) {
+export default function ListCard({ idea }: Props) {
   const ideaCreatedAtDigits = new Date(idea.created_at).toLocaleDateString()
 
   const mytext = idea.content.trim().split("\n").map((line, i) => {
@@ -25,7 +25,7 @@ export default function ListIdea({ idea }: Props) {
   return (
     <div className="grid grid-cols-1 border border-red-300">
       <section>
-        {/* {ideaCreatedAtDigits} */}
+        {ideaCreatedAtDigits}
       </section>
       <div className="grid grid-cols-4">
         <section className="col-start-1 col-end-3">

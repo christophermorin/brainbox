@@ -1,4 +1,4 @@
-export default function NewIdea() {
+export default function BoxCardNew() {
   return (
     <>
       <div className="flex justify-center items-center h-56 bg-zinc-950 rounded-md relative">

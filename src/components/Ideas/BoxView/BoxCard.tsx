@@ -33,7 +33,7 @@ const colors: RandomColor[] = [
   },
 ]
 
-export default function Idea({ idea }: Props) {
+export default function BoxCard({ idea }: Props) {
   const ideaCreatedAtString = new Date(idea.created_at).toDateString()
   const ideaCreatedAtDigits = new Date(idea.created_at).toLocaleDateString()
 

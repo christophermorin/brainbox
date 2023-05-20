@@ -5,7 +5,7 @@ interface Props {
   changeView: (view: string) => void
 }
 
-export default function ListOptions({ changeView }: Props) {
+export default function IdeasViewOptions({ changeView }: Props) {
   return (
     <div className="grid grid-cols-2 w-28 px-4 pt-4 items-center">
       <Image

@@ -1,9 +1,8 @@
 import { createServerComponentSupabaseClient } from "@supabase/auth-helpers-nextjs";
-import Login from "../components/Login/Login";
+import Login from "../components/Login";
 import { cookies, headers } from "next/headers";
 import { Database } from "@/lib/database";
 import { redirect } from "next/navigation";
-import Waves from "@/components/Waves/Waves";
 
 
 export default async function Home() {

@@ -1,4 +1,4 @@
-import Waves from "@/components/Waves/Waves";
+import Waves from "@/components/Waves";
 
 export default function Loading() {
   return (

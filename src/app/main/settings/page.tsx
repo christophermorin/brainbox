@@ -1,8 +1,19 @@
 import Link from "next/link"
 import Image from "next/image"
 import SettingsForm from "@/components/Form/SettingsForm"
+import { Database } from "@/lib/database"
+import { createServerComponentSupabaseClient } from "@supabase/auth-helpers-nextjs"
+import { headers, cookies } from "next/headers"
 
-export default function Settings() {
+export default async function Settings() {
+  const supabase = createServerComponentSupabaseClient<Database>({
+    headers,
+    cookies,
+  })
+  const { data: { user } } = await supabase.auth.getUser()
+
+  let { data: settings } = await supabase.from("settings").select("view").eq("user_id", user?.id)
+
   return (
     <>
       <div className="p-2">
@@ -18,7 +29,7 @@ export default function Settings() {
         </div>
       </div>
       <div className="flex flex-col gap-4 h-full p-4 ">
-        <SettingsForm />
+        <SettingsForm settings={settings} />
       </div>
     </>
   )

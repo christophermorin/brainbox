@@ -1,13 +1,11 @@
 import { Exo_2 } from 'next/font/google';
 import './globals.css'
-import Head from 'next/head'
-import NavBar from '../components/NavBar/NavBar'
+import NavBar from '../components/NavBar'
 import SupabaseProvider from './supabase-provider'
 import SupabaseListener from './supabase-listener'
 import { createServerComponentSupabaseClient } from '@supabase/auth-helpers-nextjs'
 import { headers, cookies } from 'next/headers'
 import { Database } from '@/lib/database'
-import Waves from '@/components/Waves/Waves'
 
 export const metadata = {
   title: 'Brain Box',
