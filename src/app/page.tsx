@@ -16,7 +16,7 @@ export default async function Home() {
   //   redirect("/main")
   // }
   return (
-    <main className="grid grid-cols-1 flex-1">
+    <main className="flex flex-col h-full">
       <NavBar />
       {/* <h1 className="text-2xl text-center">Brain Box</h1> */}
       {session?.user.aud === "authenticated" ?

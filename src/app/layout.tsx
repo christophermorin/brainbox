@@ -1,6 +1,5 @@
 import { Exo_2 } from 'next/font/google';
 import './globals.css'
-import NavBar from '../components/NavBar'
 import SupabaseProvider from './supabase-provider'
 import SupabaseListener from './supabase-listener'
 import { createServerComponentSupabaseClient } from '@supabase/auth-helpers-nextjs'
