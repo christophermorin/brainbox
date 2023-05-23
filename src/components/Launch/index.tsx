@@ -9,7 +9,7 @@ export default function Launch() {
     var top = (screen.height - height) / 2;
     var options = 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top;
 
-    window.open("http://localhost:3000/main", '_blank', options);
+    window.open("https://brainbox-delta.vercel.app/main", '_blank', options);
   }
 
   return (
