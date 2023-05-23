@@ -5,6 +5,7 @@ import SupabaseListener from './supabase-listener'
 import { createServerComponentSupabaseClient } from '@supabase/auth-helpers-nextjs'
 import { headers, cookies } from 'next/headers'
 import { Database } from '@/lib/database'
+import NavBar from '@/components/NavBar';
 
 export const metadata = {
   title: 'Brain Box',
@@ -30,12 +31,15 @@ export default async function RootLayout({
     cookies,
   })
   const { data: { session } } = await supabase.auth.getSession()
+  const avatar = session?.user.user_metadata.avatar_url
+  const username = session?.user.user_metadata.name
+
   return (
     <html lang="en" className={`${exo.variable}`} >
       <body className='flex flex-col h-screen'>
         <SupabaseProvider session={session}>
           <SupabaseListener serverAccessToken={session?.access_token} />
-          {/* <NavBar /> */}
+          <NavBar avatar={avatar} username={username} />
           {children}
         </SupabaseProvider>
       </body>

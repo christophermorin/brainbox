@@ -3,8 +3,7 @@ import Login from "../components/Login";
 import Launch from "@/components/Launch";
 import { cookies, headers } from "next/headers";
 import { Database } from "@/lib/database";
-import NavBar from "@/components/NavBar";
-
+import Image from "next/image";
 
 export default async function Home() {
   const supabase = createServerComponentSupabaseClient<Database>({
@@ -12,18 +11,29 @@ export default async function Home() {
     cookies,
   })
   const { data: { session } } = await supabase.auth.getSession()
-  // if (session?.user.aud === "authenticated") {
-  //   redirect("/main")
-  // }
+
   return (
     <main className="flex flex-col h-full">
-      <NavBar />
-      {/* <h1 className="text-2xl text-center">Brain Box</h1> */}
-      {session?.user.aud === "authenticated" ?
-        <Launch />
-        :
-        <Login />
-      }
+      <div className="flex flex-col justify-between h-full">
+        <div className="flex flex-col justify-around  items-center relative flex-1">
+          <p className=" text-7xl p-4 bg-black/30">
+            <span className="">Brain</span>
+            <span className="">Box</span>
+          </p>
+          <section className="flex-auto">
+            <Image
+              src="/boxbox.svg"
+              fill
+              alt="Brain Box"
+              className="-z-10"
+            />
+          </section>
+        </div >
+        {session?.user.aud === "authenticated"
+          ? <Launch />
+          : <Login />
+        }
+      </div >
     </main >
   )
 }

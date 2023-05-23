@@ -1,8 +1,10 @@
 "use client"
+import Image from "next/image";
+
 export default function Launch() {
   function openNewWindow() {
-    var width = Math.min(380, window.innerWidth); // Set the maximum width to 380 pixels
-    var height = window.outerHeight; // Use the user's maximum viewport height
+    var width = Math.min(320, window.innerWidth);
+    var height = window.outerHeight;
     var left = 0
     var top = (screen.height - height) / 2;
     var options = 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top;
@@ -11,14 +13,18 @@ export default function Launch() {
   }
 
   return (
-    <div className="grid grid-cols-1 h-full justify-items-center">
-      <p className="uppercase">
-        Launch Brain Box!
-      </p>
-      <div onClick={() => openNewWindow()} className="grid grid-cols-1 items-center justify-items-center">
-        Launch here
+    <section className="flex justify-center items-center relative flex-1">
+      <div className="flex flex-col items-center">
+        <span>LAUNCH</span>
+        <Image
+          onClick={() => openNewWindow()}
+          src="/box-open.svg"
+          width={204}
+          height={204}
+          alt="Brain Box"
+        />
       </div>
-      {/* <Waves /> */}
-    </div>
+    </section>
   )
 }
+

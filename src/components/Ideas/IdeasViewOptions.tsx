@@ -14,6 +14,7 @@ export default function IdeasViewOptions({ changeView }: Props) {
         height={24}
         alt="Box View"
         onClick={() => changeView("box")}
+        className="cursor-pointer"
       />
       <Image
         src="/list-rounded.svg"
@@ -21,6 +22,7 @@ export default function IdeasViewOptions({ changeView }: Props) {
         height={24}
         alt="List View"
         onClick={() => changeView("list")}
+        className="cursor-pointer"
       />
     </div>
   )

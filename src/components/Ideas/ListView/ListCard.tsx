@@ -38,11 +38,11 @@ export default function ListCard({ idea }: Props) {
   }
 
   return (
-    <div className="grid grid-cols-4 border border-stone-500/50 rounder-sm shadow-sm shadow-stone-500 bg-gradient-to-t from-zinc-950 hover:shadow-stone-200 hover:bg-zinc-950 ">
+    <div className="grid grid-cols-4 border border-stone-500/50 rounder-sm shadow-sm shadow-stone-500 bg-gradient-to-t from-zinc-950 hover:shadow-[rgba(255,23,211,1)] hover:bg-zinc-950 ">
       <div className="col-start-1 col-end-4">
         <Link href={`/main/${idea.id}`}>
           <section className="px-2">
-            <span className="text-xs italic text-cyan-300">
+            <span className="text-xs text-cyan-300">
               {ideaCreatedAtDigits}
             </span>
           </section>
@@ -57,8 +57,8 @@ export default function ListCard({ idea }: Props) {
         <span className="text-red-300 ">
           <Image
             src="/x.svg"
-            width={24}
-            height={24}
+            width={20}
+            height={20}
             alt="Delete Idea"
             onClick={showConfirmBox}
           />

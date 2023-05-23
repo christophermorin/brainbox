@@ -8,7 +8,7 @@ export default async function MainLayout({
 }) {
   return (
     <div className="flex flex-col max-w-sm h-screen">
-      <NavBar />
+      {/* <NavBar /> */}
       {children}
       <Footer />
     </div>

@@ -48,11 +48,11 @@ export default function BoxCard({ idea }: Props) {
 
   return (
 
-    <div className="flex flex-col p-2 h-56 shadow-sm shadow-stone-500 rounded-sm relative hover:shadow-stone-200 hover:bg-zinc-950">
-      <Link href={`/main/${idea.id}`} className="flex-1">
+    <div className="flex flex-col p-2 h-56 shadow-sm shadow-stone-500 rounded-sm relative hover:shadow-[rgba(255,23,211,1)] hover:bg-zinc-950">
+      <Link href={`/main/${idea.id}`} className="flex-1 overflow-y-scroll">
         <section className="text-center ">
-          <p className="italic text-xs text-cyan-300">{ideaCreatedAtString}</p>
-          <p className={`font-bold text-xl mt-2 break-words text-stone-200`}>{idea.title}</p>
+          <p className="text-xs text-cyan-300">{ideaCreatedAtString}</p>
+          <p className={`font-bold text-lg mt-2 break-words text-stone-200`}>{idea.title}</p>
         </section>
         <div className=" overflow-y-hidden break-words text-sm  text-stone-300">
           {contentIntoParas[0]}
@@ -63,8 +63,8 @@ export default function BoxCard({ idea }: Props) {
         <span className="text-red-300 cursor-pointer">
           <Image
             src="/x.svg"
-            width={24}
-            height={24}
+            width={20}
+            height={20}
             alt="Delete Idea"
             onClick={showConfirmBox}
           />

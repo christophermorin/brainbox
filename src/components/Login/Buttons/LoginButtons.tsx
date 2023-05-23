@@ -9,7 +9,7 @@ export default function LoginButtons() {
       <SignInButton provider={"github"} />
       <SignInButton provider={"google"} />
       <SignInButton provider={"discord"} />
-      <SignInButton provider={"twitter"} />
+      <SignInButton provider={"spotify"} />
     </div>
   )
 }
