@@ -16,9 +16,8 @@ export default async function Home() {
     <main className="flex flex-col h-full">
       <div className="flex flex-col justify-between h-full">
         <div className="flex flex-col justify-around  items-center relative flex-1">
-          <p className=" text-7xl p-4 bg-black/30">
-            <span className="">Brain</span>
-            <span className="">Box</span>
+          <p className=" text-7xl p-4 bg-black shadow-sm shadow-cyan-300">
+            Brain Box
           </p>
           <section className="flex-auto">
             <Image
@@ -29,9 +28,10 @@ export default async function Home() {
             />
           </section>
         </div >
-        {session?.user.aud === "authenticated"
-          ? <Launch />
-          : <Login />
+        {
+          session?.user.aud === "authenticated"
+            ? <Launch />
+            : <Login />
         }
       </div >
     </main >

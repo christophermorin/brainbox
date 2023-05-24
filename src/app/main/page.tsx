@@ -18,14 +18,15 @@ export default async function Main() {
 
   if (!settings?.data?.length) {
     settings = await supabase.rpc("create_settings", {
-      view: "box",
+      view: true,
+      theme: true
     })
   }
-
+  console.log(settings)
   return (
     <>
       <div className="p-2">
-        <input className="w-full bg-zinc-900 h-12 rounded-xl text-center" type="search" placeholder="Search" />
+        <div className="flex items-center justify-center w-full bg-zinc-900 h-12 rounded-xl text-center">BrainBox</div>
       </div>
       <Ideas data={data} settings={settings.data} />
     </>

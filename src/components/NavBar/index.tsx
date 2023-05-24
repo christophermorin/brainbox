@@ -29,9 +29,8 @@ export default function NavBar({ avatar, username }: Props) {
             src={avatar || "/guest.svg"}
             width={32}
             height={32}
-            alt="Sign Out"
-            onClick={() => signOut()}
-            className="cursor-pointer rounded-full"
+            alt="User Avatar"
+            className="rounded-full"
           />
         </section>
         <Image

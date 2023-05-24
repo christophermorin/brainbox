@@ -17,7 +17,7 @@ export default function GuestButton() {
   return (
     <div
       onClick={() => signInWithProvider()}
-      className="flex rounded-md w-full h-16 bg-gradient-to-t from-zinc-950 shadow-sm shadow-stone-500 cursor-pointer col-span-2">
+      className="flex rounded-md w-full h-16 bg-gradient-to-t from-zinc-950 shadow-md shadow-[rgba(255,23,211,1)] hover:shadow-stone-300 cursor-pointer col-span-2 transition-all duration-300 ease-in-out">
       <div className="grid grid-cols-2 items-center justify-items-center w-full pr-4">
         <Image
           src='/guest.svg'
@@ -25,7 +25,7 @@ export default function GuestButton() {
           height={30}
           alt='Guest SignIn'
         />
-        <span className="uppercase">
+        <span className="uppercase font-bold">
           Guest
         </span>
       </div>
