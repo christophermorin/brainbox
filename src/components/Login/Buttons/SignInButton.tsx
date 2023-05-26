@@ -20,7 +20,7 @@ export default function SignInButton({ provider }: Props) {
   return (
     <div
       onClick={() => signInWithProvider()}
-      className="flex rounded-md w-full h-16 bg-gradient-to-t from-zinc-950 shadow-sm shadow-cyan-300 hover:shadow-[rgba(255,23,211,1)] cursor-pointer transition-all duration-300 ease-in-out">
+      className="flex rounded-md w-full h-16 bg-gradient-to-t from-zinc-950 shadow-sm shadow-cyan-300 hover:shadow-[rgba(255,23,211,1)] cursor-pointer transition-all duration-300 ease-in-outnpm r">
       <div className="grid grid-cols-2 items-center justify-items-center w-full pr-4">
         <Image
           src={`/${signInProvider}.svg`}
