@@ -1,9 +1,9 @@
 
-import { Database } from "@/lib/database"
-import { createServerComponentSupabaseClient } from "@supabase/auth-helpers-nextjs"
-import { cookies, headers } from "next/headers"
 import Link from "next/link"
 import Image from "next/image"
+import { cookies, headers } from "next/headers"
+import { createServerComponentSupabaseClient } from "@supabase/auth-helpers-nextjs"
+import { Database } from "@/lib/database"
 import UpdateForm from "@/components/Forms/UpdateForm"
 
 interface Props {
@@ -38,12 +38,3 @@ export default async function OneIdea({ params }: Props) {
     </>
   )
 }
-
-// export async function generateStaticParams() {
-//   const { data: { user } } = await supabase.auth.getUser()
-//   console.log("In generator")
-//   const ideas = await supabase.from("ideas").select("*").eq("id", slug)
-//   return ideas?.data?.map((idea) => ({
-//     slug: idea.slug,
-//   }));
-// }

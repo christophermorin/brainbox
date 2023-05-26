@@ -27,7 +27,6 @@ export default function BoxCard({ idea }: Props) {
       <div key={i} className=''>
         <p className='my-2 line-clamp-3' >{line}</p>
       </div>
-
     )
   })
 
@@ -37,7 +36,11 @@ export default function BoxCard({ idea }: Props) {
 
   const deleteIdeaAndRefresh = async (id: string) => {
     try {
-      const { error, status } = await supabase.from("ideas").delete().eq("id", id)
+      const { error, status } = await supabase
+        .from("ideas")
+        .delete()
+        .eq("id", id)
+
       if (!error && status === 204) {
         router.refresh()
       }
@@ -56,7 +59,6 @@ export default function BoxCard({ idea }: Props) {
         </section>
         <div className=" overflow-y-hidden break-words text-sm  text-stone-300">
           {contentIntoParas[0]}
-          {contentIntoParas.length > 1 && <div className="text-stone-400">{`+ ${Math.floor((contentIntoParas.length - 1) / 2)} lines...`}</div>}
         </div>
       </Link>
       <section className="flex justify-end items-end text-xs mt-1">

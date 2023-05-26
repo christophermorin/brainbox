@@ -1,7 +1,9 @@
 "use client"
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Launch() {
+  const router = useRouter()
   function openNewWindow() {
     var width = Math.min(375, window.innerWidth);
     var height = window.outerHeight;
@@ -9,7 +11,7 @@ export default function Launch() {
     var top = (screen.height - height) / 2;
     var options = 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top;
 
-    window.open("https://brainbox-delta.vercel.app/main", '_blank', options);
+    window.open("http://localhost:3000/main", '_blank', options);
   }
 
   return (

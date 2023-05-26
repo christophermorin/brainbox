@@ -14,7 +14,25 @@ export interface Database {
           title: string,
           content: string,
         } // The data expected passed to an "insert" statement.
-        Update: {} // The data expected passed to an "update" statement.
+        Update: {
+          title: string,
+          content: string,
+        } // The data expected passed to an "update" statement.
+      },
+      settings: {
+        Row: {
+          id: string,
+          user_id: string,
+          view: boolean,
+          theme: boolean,
+        },
+        Insert: {
+          view: boolean,
+          theme: boolean,
+        },
+        Update: {
+          view: boolean,
+        }
       }
     }
   }

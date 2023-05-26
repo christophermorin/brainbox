@@ -1,9 +1,9 @@
 import { createServerComponentSupabaseClient } from "@supabase/auth-helpers-nextjs";
-import Login from "../components/Login";
-import Launch from "@/components/Launch";
 import { cookies, headers } from "next/headers";
-import { Database } from "@/lib/database";
 import Image from "next/image";
+import Login from "@/components/Login";
+import Launch from "@/components/Launch";
+import { Database } from "@/lib/database";
 
 export default async function Home() {
   const supabase = createServerComponentSupabaseClient<Database>({

@@ -1,10 +1,10 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
 import IdeasViewOptions from "./IdeasViewOptions"
 import ListCardNew from "./ListView/ListCardNew"
 import ListCard from "./ListView/ListCard"
-import { useState } from "react"
 import BoxCardNew from "./BoxView/BoxCardNew"
 import BoxCard from "./BoxView/BoxCard"
 

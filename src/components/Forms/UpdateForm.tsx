@@ -27,9 +27,7 @@ export default function UpdateForm({ data }: any) {
             created_at: new Date()
           })
             .eq("id", idea.id)
-          console.log(error, status)
           if (!error && status === 204) {
-            console.log("in post success")
             router.push("/main")
             router.refresh()
           }
@@ -41,16 +39,34 @@ export default function UpdateForm({ data }: any) {
       {({ errors, touched }) => (
         <Form className='flex flex-col flex-1 gap-4 rounded-md bg-[rgba(0,0,0,0) p-4'>
           <div>
-            <Field name="title" placeholder="Title" className='w-full text-xl font-bold  bg-zinc-800  rounded-md p-4 text-stone-200 outline-none focus:outline-cyan-800' />
-            <ErrorMessage name="title" render={msg => <div className='text-red-400'>{msg}</div>} />
+            <Field
+              name="title"
+              placeholder="Title"
+              className='w-full text-xl font-bold  bg-zinc-800  rounded-md p-4 text-stone-200 outline-none focus:outline-cyan-800'
+            />
+            <ErrorMessage
+              name="title"
+              render={msg => <div className='text-red-400'>{msg}</div>}
+            />
           </div>
           <div className='h-full'>
-            <Field name="content" as="textarea" placeholder="What's on your mind?" className='h-4/5 w-full text-lg  bg-zinc-800  rounded-md p-4 text-stone-300 outline-none focus:outline-cyan-800' />
-            <ErrorMessage name="content" render={msg => <div className='text-red-400'>{msg}</div>} />
-
+            <Field
+              name="content"
+              as="textarea"
+              placeholder="What's on your mind?"
+              className='h-full w-full text-lg  bg-zinc-800  rounded-md p-4 text-stone-300 outline-none focus:outline-cyan-800'
+            />
+            <ErrorMessage
+              name="content"
+              render={msg => <div className='text-red-400'>{msg}</div>}
+            />
           </div>
           <div className='flex justify-center items-center'>
-            <button type="submit" className="bg-zinc-900 h-10 w-36 rounded-xl text-center uppercase font-bold  text-stone-200">Update</button>
+            <button
+              type="submit"
+              className="bg-zinc-900 h-10 w-36 rounded-xl text-center uppercase font-bold  text-stone-200">
+              Update
+            </button>
           </div>
         </Form>
       )}

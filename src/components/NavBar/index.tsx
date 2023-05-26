@@ -1,14 +1,12 @@
-// This doesn't need to be client, only the buttons
 "use client"
 import { useSupabase } from "@/app/supabase-provider"
 import Image from "next/image"
 
 interface Props {
   avatar: string,
-  username: string | null
 }
 
-export default function NavBar({ avatar, username }: Props) {
+export default function NavBar({ avatar }: Props) {
   const { supabase } = useSupabase()
   async function signOut() {
     await supabase.auth.signOut()
@@ -41,7 +39,6 @@ export default function NavBar({ avatar, username }: Props) {
           onClick={() => signOut()}
           className="justify-self-end cursor-pointer"
         />
-
       </section>
     </div>
   )

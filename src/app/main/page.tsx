@@ -3,8 +3,6 @@ import { Database } from "@/lib/database";
 import { cookies, headers } from "next/headers";
 import Ideas from "@/components/Ideas";
 
-export const revalidate = 1;
-
 export default async function Main() {
   const supabase = createServerComponentSupabaseClient<Database>({
     headers,
@@ -12,9 +10,16 @@ export default async function Main() {
   })
   const { data: { user } } = await supabase.auth.getUser()
 
-  const { data } = await supabase.from("ideas").select("*").eq("user_id", user?.id).order("created_at", { ascending: false })
+  const { data } = await supabase
+    .from("ideas")
+    .select("*")
+    .eq("user_id", user?.id)
+    .order("created_at", { ascending: false })
 
-  let settings = await supabase.from("settings").select("*").eq("user_id", user?.id)
+  let settings = await supabase
+    .from("settings")
+    .select("*")
+    .eq("user_id", user?.id)
 
   if (!settings?.data?.length) {
     settings = await supabase.rpc("create_settings", {
@@ -22,7 +27,6 @@ export default async function Main() {
       theme: true
     })
   }
-  console.log(settings)
   return (
     <>
       <div className="p-2">
@@ -32,4 +36,3 @@ export default async function Main() {
     </>
   )
 }
-

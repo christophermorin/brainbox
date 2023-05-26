@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link"
-import IdeaForm from "@/components/Forms/IdeaForm"
 import Image from "next/image"
+import IdeaForm from "@/components/Forms/IdeaForm"
 
 export default function AddIdea() {
 

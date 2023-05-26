@@ -1,9 +1,9 @@
 import Link from "next/link"
 import Image from "next/image"
+import { headers, cookies } from "next/headers"
+import { createServerComponentSupabaseClient } from "@supabase/auth-helpers-nextjs"
 import SettingsForm from "@/components/Forms/SettingsForm"
 import { Database } from "@/lib/database"
-import { createServerComponentSupabaseClient } from "@supabase/auth-helpers-nextjs"
-import { headers, cookies } from "next/headers"
 
 export default async function Settings() {
   const supabase = createServerComponentSupabaseClient<Database>({

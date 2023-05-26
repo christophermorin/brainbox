@@ -32,14 +32,14 @@ export default async function RootLayout({
   })
   const { data: { session } } = await supabase.auth.getSession()
   const avatar = session?.user.user_metadata.avatar_url
-  const username = session?.user.user_metadata.name
+
 
   return (
     <html lang="en" className={`${exo.variable}`} >
       <body className='flex flex-col h-screen'>
         <SupabaseProvider session={session}>
           <SupabaseListener serverAccessToken={session?.access_token} />
-          <NavBar avatar={avatar} username={username} />
+          <NavBar avatar={avatar} />
           {children}
         </SupabaseProvider>
       </body>
